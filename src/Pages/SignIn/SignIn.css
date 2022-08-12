@@ -1,0 +1,85 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.headerOfSignIn{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.maindiv{
+    width:470px;
+    height:90%;
+    border-radius: 0.5rem;
+    border: 1px solid #cec8c8;
+    display:flex;
+    flex-direction: column;
+    padding:2.5rem 2.5rem 0 2.5rem;
+    flex-wrap:wrap;
+}
+.Sign-In-Heading{
+    font-size: 150%;
+    color:#343131;
+    margin:1rem 0;
+}
+.text2{
+    color:#343131;
+    font-size:100%;
+    margin-bottom:1rem;
+}
+.Child-one{
+    text-align: center;
+}
+.Child-two{
+    display:inline;
+    flex-direction: column;
+}
+input[type='text']{
+    width:100%;
+    outline:none;
+    margin-right:0.2rem;
+    font-size: 15px;
+}
+
+.text3{
+    color:#4f4c4c;
+    font-size:89%;
+    margin-bottom:0.5rem;
+    margin-top:1rem;
+}
+.Link{
+    text-decoration:none;
+    font-weight: 550;
+    font-size:0.8rem;
+    color:#4377f9;
+}
+.Bottom-Part{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:2rem;
+}
+.Next{
+    background-color:rgb(9, 117, 226);
+    outline:none;
+    border:#4377f9;
+    padding:0.7rem 1.5rem;
+    border-radius: 5px;
+    color:white;
+    font-weight: 500;
+}
+button:hover{
+    cursor:pointer;
+    opacity:0.9;
+}
+
+input:focus{
+    transition:0.4s;
+}
+@media only screen and (max-width:600px){
+    
+}
