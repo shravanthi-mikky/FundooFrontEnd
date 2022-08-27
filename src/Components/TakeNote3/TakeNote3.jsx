@@ -10,16 +10,21 @@ import TextField from '@mui/material/TextField';
 import './TakeNote3.css'
 
 
-function TakeNote3() {
+function TakeNote3(props) {
+  
   return (
-    <div class='main3'>
-        <div class="box1 item">
-            <div class="top part">
-                <input placeholder="Title"></input>
+    <div >
+        <div class="box1Container">
+            <div class="top">
+                {/* <input class='InputToNote' placeholder={props.note.title}/> */}
+                <div>{props.note.title}</div>
                 <PushPinOutlinedIcon fontSize='small'/>
             </div>
-            <div class="middle part"><textarea placeholder='Take a note'></textarea></div>
-            <div class="bottom part">
+            <div class="middle">
+              {/* <textarea class='InputToNote' placeholder={props.note.note}/> */}
+              <div>{props.note.note}</div>
+            </div>
+            <div class="bottom">
                 <AddAlertOutlinedIcon fontSize='small'/>
                 <PersonAddAltOutlinedIcon fontSize='small'/>
                 <PaletteOutlinedIcon fontSize='small'/>

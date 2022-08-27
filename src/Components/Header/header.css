@@ -5,7 +5,7 @@
 }
 .main{
     width:100vw;
-    height:100vh;
+    height:10vh;
 }
 .header{
     border:1px solid rgb(185, 185, 185);
@@ -13,8 +13,8 @@
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-    height:10%;
     margin-top: 0px;
+    padding:1rem;
 }
 .icon{
     width:10vw;
@@ -42,7 +42,7 @@
     box-shadow: 1px 1px 1px 1px rgb(233, 232, 232);
     background-color: rgb(243, 242, 242);
     width:60vw;
-    height:7vh;
+    height:8vh;
     padding:1rem;
 }
 

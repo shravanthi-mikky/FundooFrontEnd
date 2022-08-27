@@ -11,13 +11,13 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 function App() {
   return (
     <div >
-      {/* <Header/> */}
-      <SignIn/>
-      {/* <TakeNote3/> */}
+      {/* <SignIn/> */}
       {/* <SignUp/> */}
+      {/* <Header/> */}
       {/* <TakeNote1/> */}
       {/* <TakeNote2/> */}
-      {/* <Dashboard/> */}
+      {/* <TakeNote3/> */}
+      <Dashboard/>
     </div>
   );
 }

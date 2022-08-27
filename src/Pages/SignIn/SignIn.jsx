@@ -55,7 +55,7 @@ function SignIn() {
     }
 
     if (emailTest === true && passwordTest === true) {
-      signIn(signInObj).then((response)=>{localStorage.setItem("token",response.data.token)}).catch((error)=>{console.log(error)});
+      signIn(signInObj).then((response)=>{console.log(response); localStorage.setItem("token",response.data.token)}).catch((error)=>{console.log(error)});
     }
   };
   return (
