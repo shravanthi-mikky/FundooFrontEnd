@@ -24,7 +24,7 @@ function TakeNote1(props) {
           }}
           id='note1'> <Paper elevation={4} square>
             <div class='note2'>
-            <input  placeholder='Take a note...'></input>
+            <input class='TitleOfOne' placeholder='Take a note...'></input>
             <CheckBoxOutlinedIcon/>
             <BrushOutlinedIcon/>
             <ImageOutlinedIcon/>

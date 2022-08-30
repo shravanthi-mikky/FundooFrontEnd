@@ -10,6 +10,7 @@ import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import { addNote, updateArchive } from '../../Pages/Services/dataService';
+import ColorPopper from '../ColorPopper/colorPopper';
 
 function TakeNote2() {
     const [noteObj, setNoteObj] = React.useState({ title: "", note: "",color:"",isArchive:false, });
@@ -26,10 +27,13 @@ function TakeNote2() {
     }
     const ArchiveNotes = () => {
         setNoteObj((prevState) => ({ ...prevState, isArchive: true }));
+    }
 
+    const ListenToColorPopper = (color) => {
+        setNoteObj((prevState) => ({ ...prevState, color: color }));
     }
   return (
-    <div className="takenotetwo" >
+    <div className="takenotetwo" style={{backgroundColor:noteObj.color}}>
             <div className="notesbody">
                 <input type="text" onChange={takeTitle} placeholder="Title" />
                 <PushPinOutlinedIcon fontSize='small'/>
@@ -41,7 +45,10 @@ function TakeNote2() {
                 <div className="notesicons">
                     <div class='AddAlertIcon IconTakeTwo2'><AddAlertOutlinedIcon fontSize='small' /></div>
                     <div class='AddPerson IconTakeTwo2'><PersonAddAltOutlinedIcon fontSize='small'/></div>
-                    <div class='ColorIcon IconTakeTwoo'><PaletteOutlinedIcon fontSize='small'/></div>
+                    <div class='ColorIcon IconTakeTwoo'>
+                        {/* <PaletteOutlinedIcon fontSize='small'/> */}
+                        <ColorPopper action="create" ListenToColorPopper={ListenToColorPopper}/>
+                        </div>
                     <div class='ImageIcon IconTakeTwoo'><InsertPhotoOutlinedIcon fontSize='small'/></div>
                     <div class='ArchiveIcon IconTakeTwoo'><ArchiveOutlinedIcon fontSize='small' onClick={ArchiveNotes}/></div>
                     <div class='MoreIcon IconTakeTwoo'><MoreVertOutlinedIcon fontSize='small'/></div>

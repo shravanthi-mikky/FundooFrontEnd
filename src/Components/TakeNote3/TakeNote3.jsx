@@ -8,13 +8,15 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import TextField from '@mui/material/TextField';
 import './TakeNote3.css'
+import ColorPopper from '../ColorPopper/colorPopper';
 
 
 function TakeNote3(props) {
-  
+
   return (
+    
     <div >
-        <div class="box1Container">
+        <div class="box1Container" style={{backgroundColor:props.note.color}}>
             <div class="top">
                 {/* <input class='InputToNote' placeholder={props.note.title}/> */}
                 <div>{props.note.title}</div>
@@ -27,7 +29,8 @@ function TakeNote3(props) {
             <div class="bottom">
                 <AddAlertOutlinedIcon fontSize='small'/>
                 <PersonAddAltOutlinedIcon fontSize='small'/>
-                <PaletteOutlinedIcon fontSize='small'/>
+                {/* <PaletteOutlinedIcon fontSize='small'/> */}
+                <ColorPopper action="update" id={props.note.noteID}/>
                 <InsertPhotoOutlinedIcon fontSize='small'/>
                 <ArchiveOutlinedIcon fontSize='small'/>
                 <MoreVertOutlinedIcon fontSize='small'/>

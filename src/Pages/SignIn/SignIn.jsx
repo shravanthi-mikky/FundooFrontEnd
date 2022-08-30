@@ -3,11 +3,14 @@ import './SignIn.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {signIn} from '../Services/userService'
+import { useNavigate } from 'react-router-dom';
 
 const emailRegex =/^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex =/^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 function SignIn() {
+  const navigate = useNavigate()
+
   const [signInObj, setSignInObj] = React.useState({ email: "", password: "" });
   const [regexObj, setRegExObj] = React.useState({
     emailBorder: false,
@@ -55,7 +58,10 @@ function SignIn() {
     }
 
     if (emailTest === true && passwordTest === true) {
-      signIn(signInObj).then((response)=>{console.log(response); localStorage.setItem("token",response.data.token)}).catch((error)=>{console.log(error)});
+      signIn(signInObj)
+      navigate('/DashBoard')
+      .then((response)=>{/* console.log(response); */ localStorage.setItem("token",response.data.token)})
+      .catch((error)=>{console.log(error)});
     }
   };
   return (
