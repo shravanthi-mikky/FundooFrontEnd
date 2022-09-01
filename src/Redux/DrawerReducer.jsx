@@ -20,7 +20,7 @@ export const drawerReducer = (state = initialDrawerState, action) => {
         case 'SET_Title_as_EditLabels':
             return {
                 ...state,
-                title: "Edit Labels"
+                title: "Edit_Labels"
             };
         case 'SET_Title_as_Archive':
             return {

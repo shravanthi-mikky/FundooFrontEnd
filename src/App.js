@@ -21,7 +21,7 @@ function App() {
       <Provider store={store}>
         <RouterComponent />
       </Provider>
-
+      {/* <RouterComponent /> */}
       {/* <SignUp/> */}
       {/* <Header/> */}
       {/* <TakeNote1/> */}
@@ -29,7 +29,7 @@ function App() {
       {/* <TakeNote3/> */}
 
       {/* <Dashboard/> */}
-      
+
     </div>
   );
 }

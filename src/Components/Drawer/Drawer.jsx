@@ -99,6 +99,7 @@ export function MiniDrawer(props) {
     };
 
     const handleNotes = () => {
+        props.listenToDrawer("Notes")
         props.dispatch({type : "SET_Title_as_Notes"})
     }
     const handleReminders = () => {
@@ -108,9 +109,11 @@ export function MiniDrawer(props) {
         props.dispatch({type : "SET_Title_as_EditLabels"})
     }
     const handleArchive = () => {
+        props.listenToDrawer("Archive")
         props.dispatch({type : "SET_Title_as_Archive"})
     }
     const handleTrash = () => {
+        props.listenToDrawer("Trash")
         props.dispatch({type : "SET_Title_as_Trash"})
     }
 
