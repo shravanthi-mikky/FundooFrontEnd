@@ -28,7 +28,7 @@ function Dashboard() {
   }
   React.useEffect(()=> { 
     getNotes()
-    .then(response=>{
+    .then(response=>{ 
       console.log(response)
       let filterArray=response.data.filter((note)=>{
         if(currentNotes == "Notes")

@@ -11,9 +11,13 @@ import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import { addNote, updateArchive } from '../../Pages/Services/dataService';
 import ColorPopper from '../ColorPopper/colorPopper';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+
 
 function TakeNote2() {
-    const [noteObj, setNoteObj] = React.useState({ title: "", note: "",color:"",isArchive:false, });
+    const [noteObj, setNoteObj] = React.useState({ title: "", note: "",color:"",isArchive:false, isTrash:false});
+
+    /* const [noteObj2, setNoteObj2] = React.useState({ title: "", note: "",color:""}); */
 
     const takeTitle = (event) => {
         setNoteObj((prevState) => ({ ...prevState, title: event.target.value }));
@@ -21,16 +25,23 @@ function TakeNote2() {
     const takeNotes = (event) => {
         setNoteObj((prevState) => ({ ...prevState, note: event.target.value }));
       };
-    const submit = () => {
-        addNote(noteObj).then((response)=>{console.log(response)
-        }).catch((error) => console.log(error))
-    }
+    
     const ArchiveNotes = () => {
         setNoteObj((prevState) => ({ ...prevState, isArchive: true }));
     }
 
+    const TrashNotes = () => {
+        setNoteObj((prevState) => ({ ...prevState, isTrash: true }));
+    }
+
     const ListenToColorPopper = (color) => {
         setNoteObj((prevState) => ({ ...prevState, color: color }));
+    }
+    const submit = () => {
+        /* let response=addNote(noteObj);
+        console.log(response); */
+        addNote(noteObj).then((response)=>{console.log(response)
+        }).catch((error) => console.log(error))
     }
   return (
     <div className="takenotetwo" style={{backgroundColor:noteObj.color}}>
@@ -52,6 +63,7 @@ function TakeNote2() {
                     <div class='ImageIcon IconTakeTwoo'><InsertPhotoOutlinedIcon fontSize='small'/></div>
                     <div class='ArchiveIcon IconTakeTwoo'><ArchiveOutlinedIcon fontSize='small' onClick={ArchiveNotes}/></div>
                     <div class='MoreIcon IconTakeTwoo'><MoreVertOutlinedIcon fontSize='small'/></div>
+                    <DeleteOutlineOutlinedIcon onClick={TrashNotes}/>
                     <div class='UndoIcon IconTakeTwoo'><UndoRoundedIcon/></div>
                     <div class='RedoIcon IconTakeTwoo'><RedoRoundedIcon/></div>
                 </div>
