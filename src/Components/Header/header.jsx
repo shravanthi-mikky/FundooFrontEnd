@@ -9,17 +9,23 @@ import SearchIcon from '@mui/icons-material/Search';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-function Header() {
+import { connect } from 'react-redux';
+
+function Header(props) {
+  const handleDrawer = () => {
+    props.listenToHeader()
+  }
   return (
     <div class='main'>
       <div class='header'>
         <div class='icon part-one'>
-            <DehazeOutlinedIcon/>
-            <div class='keep'>Keep</div>
+            <DehazeOutlinedIcon onClick={handleDrawer}/>
+            <img src='KeepIcon.png' width='30'/>
+            <div class='keep'>{props.title}</div>
         </div>
         <div class='icon1 part-two'>
-            <input placeholder="Search" class='searchBar' ></input>
-            <div class='search-icon'><SearchIcon /></div>
+            <div /* class='search-icon' */><SearchIcon /></div>
+            <input placeholder="Search" /* class='searchBar' */ ></input>
         </div>
         <div class='icon part-three'>
           <RefreshIcon/>
@@ -36,4 +42,13 @@ function Header() {
   )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+  console.log(state)
+return {
+  title: state.drawerReducer.title,
+};
+};
+
+
+//export default Header;
+export default connect(mapStateToProps)(Header);

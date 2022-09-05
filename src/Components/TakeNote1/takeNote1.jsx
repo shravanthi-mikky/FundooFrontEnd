@@ -6,9 +6,12 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 
-function TakeNote1() {
+function TakeNote1(props) {
+  const ListeningTiTakeNoteOne = () =>{
+    props.ListenToTakeNoteOne();
+  }
   return (
-    <div class='main1'>
+    <div class='main1' onClick={ListeningTiTakeNoteOne}>
         <Box
         sx={{
             display: 'flex',
@@ -21,7 +24,7 @@ function TakeNote1() {
           }}
           id='note1'> <Paper elevation={4} square>
             <div class='note2'>
-            <input  placeholder='Take a note...'></input>
+            <input class='TitleOfOne' placeholder='Take a note...'></input>
             <CheckBoxOutlinedIcon/>
             <BrushOutlinedIcon/>
             <ImageOutlinedIcon/>

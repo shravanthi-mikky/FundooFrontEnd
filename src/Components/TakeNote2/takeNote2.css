@@ -1,79 +1,98 @@
-*{
-    margin:0px;
-    padding: 0px;
-}
-.notesfooter, .notesicons img
-{
-    height: 20px;
-}
-.note>input{
-    border:none;
-    width: 100%;
-    height: 35px;
-}
 .takenotetwo
 {
     box-shadow: 1px 1px 1px 1px #cbcbcb;
-    border: none;
-    margin: 3%;
-    width: 30%;
-    padding: 11px;
-    position: relative;
-    margin-left: 25%;
+    border:1px solid #cbcbcb;
+    width: 40vw;
+    height: 20vh;
+    margin-left: 25vw;
+    margin-top:7vh;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    margin-bottom: 0px;
-}
-.takenotetwo .note{
-    border:none;
-    color:black;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-left: 0px;
-}
-.take{
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    align-content: flex-end;
-    margin: 14px;
+    align-items: center;
 }
+
 .notesbody
 {
     display: flex;
     flex-direction: row;
-    border-radius: 5px;
     justify-content: space-between;
-    margin-bottom: 2px;
+    align-items: center;
+    height:30%;
+    width:90%;
+    border-radius: 5px;
 }
-.notesbody>.note{
-    border:none;
-    color:black;
-    font-size: 1rem;
-    font-weight: 600;
-    width: 100%;
-    margin-left: 0px;
-    margin-bottom: 15px;
+.notesbodyMiddle{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:30%;
+    width:90%;
+}
+.notesbodyMiddle > input{
+    width:100%;
+    height:80%;
+    border: none;
 }
 
 .notesfooter
 {
-    margin-left:0px;
-    display: flex;
-    font-family:monospace;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.notesicons
-{
-    padding: 5px;
-    gap:15px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-family:monospace;
+    align-items: center;
+    height:30%;
+    width:90%;
+}
+.notesicons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     color:grey;
-    margin-left: 0px;
+    align-items:center;
+    height:80%;
+    width:90%;
+}
+.CloseButton{
+    border:none;
+    padding:0.4rem;
+    border-radius: 5px;
+}
+.notesbody > input{
+    width:80%;
+    height:80%;
+    border: none;
 }
 
+
+
+@media only screen and (max-width:300px){
+    .notesicons{
+        display:none;
+    }
+}
+@media only screen and (max-width:320px){
+    .IconTakeTwoo{
+        display:none;
+    }
+}
+@media only screen and (max-width:480px){
+    .IconTakeTwoo{
+        display:none;
+    }
+}
+@media only screen and (max-width:750px){
+    .IconTakeTwoo{
+        display:none;
+    }
+}
+@media only screen and (max-width:800px){
+    .UndoIcon{
+        display:none;
+    }
+    .RedoIcon{
+        display:none;
+    }
+}
